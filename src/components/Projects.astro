@@ -1,41 +1,79 @@
 ---
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import Spring from "./icons/Spring.astro"
+import Docker from "./icons/Docker.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
+import Swagger from "./icons/Swagger.astro"
+import Maven from "./icons/Maven.astro"
+import MySQL from "./icons/MySQL.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  SPRING: {
+    name: "Spring",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: Spring
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  DOCKER: {
+    name: "Docker",
+    class: "bg-[#2496ed] text-white",
+    icon: Docker,
   },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#C0C0C0] text-[#404040]",
+    icon: PostgreSQL,
+  },
+  SWAGGER: {
+    name: "Swagger",
+    class: "bg-[#333333] text-white",
+    icon: Swagger
+  },
+  MAVEN: {
+    name: "Maven",
+    class: "bg-[#2E8B57] text-white",
+    icon: Maven
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#CCCCCC] text-[#333333]",
+    icon: MySQL
+  }
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Bank App",
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Proyecto de microservicios seguros con Spring Boot y Spring Cloud. Incluye seguridad avanzada (OAuth2, JWT) y orquestación en Docker. ofrece una base sólida en desarrollo de aplicaciones modernas basadas en microservicios.",
+    github: "https://github.com/Paul10FC/bank-application",
+    tags: [TAGS.SPRING, TAGS.DOCKER, TAGS.POSTGRESQL, TAGS.SWAGGER, TAGS.MAVEN],
   },
+  {
+    title: "Pizza App",
+    description:
+      "Configuración completa del backend para la gestión integral de un almacén de pizzas, abarcando aspectos clave como la administración de clientes, facturación, filtros personalizados por tipo de pizza y promociones dinámicas. Desarrollé sistemas de roles, permisos y autenticación utilizando JWT para garantizar capas sólidas de seguridad. La implementación de Docker para la integración final permitió una infraestructura flexible y escalable para el proyecto. Tecnologías utilizadas: MySQL, Hibernate, JWT, Postman, Spring Data JPA, Spring, Spring Security, Spring Boot, Java, Loombook, JPQL, Swagger, JUnit y Docker.",
+    github: "https://github.com/Paul10FC/platzi-pizzeria",
+    tags: [TAGS.SPRING, TAGS.MYSQL, TAGS.DOCKER, TAGS.SWAGGER]
+  },  
+  {
+    title: "Supermarket App",
+    description:
+      "Desarrollo de una API integral para la gestión eficiente de un supermercado, utilizando Java Spring con integración sólida a una base de datos PostgreSQL. El proyecto incluyó el diseño, despliegue y supervisión de servicios para la gestión de productos, culminando en un exitoso lanzamiento de la aplicación para garantizar una experiencia de consumo fluida. Herramientas utilizadas: Spring Framework, Spring Boot, Spring Data JPA, Data Mapper, Spring MVC, Swagger y JUnit.",
+    github: "https://github.com/Paul10FC/platzi-market",
+    tags: [TAGS.SPRING, TAGS.POSTGRESQL, TAGS.SWAGGER]
+  }
 ]
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
+  PROJECTS.map(({ title, description, github, tags }) => (
     <article>
-      <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
-        {title}
-      </h3>
+      <a href={github} target="_blank" rel="noopener">
+        <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+          {title}
+        </h3>
+      </a>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
+        {tags?.map((tag) => (
           <li>
             <span
               class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
@@ -46,12 +84,6 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img
-        loading="lazy"
-        class="rounded shadow-2xl shadow-white/10 aspect-video"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
     </article>
   ))
 }
