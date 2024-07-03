@@ -1,33 +1,55 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+
+interface Experience {
+  date: string
+  title: string
+  description: string
+}
+
+const EXPERIENCE: Experience[] = [
+  {
+    date: "February 2024 - Present",
+    title: "<u><a href=https://softelligent-business.com.mx/>Backend Developer Jr - Softelligent Business</a></u>",
+    description: `
+      👉  Developing server logic and ensuring high performance and responsiveness to requests<br>
+      🔧  Collaborating with front-end to integrate user-facing elements with server-side logic<br>
+      🔄  Participating in the entire application lifecycle, focusing on coding and debugging. <br>
+      🛠️  <strong>Assisted in optimizing database queries, reducing query time by 20%. </strong><br>
+      🌐  <strong>Integrated third-party services such as payment gateways and social media APIs.</strong>
+    `
+  },
   {
     date: "January 2024",
     title: "Microservices Backend Developer - Bank App",
-    description:
-      "As a Backend Developer at Bank-App, I implemented the API Gateway with Keycloak, optimized the performance of microservices by 15% and strengthened security with technologies such as Spring Cloud, Docker, OAuth2 and JWT.",
+    description: `
+      As a Backend Developer at Bank-App, I implemented the API Gateway with Keycloak, optimized the performance of microservices by 15% and strengthened security with technologies such as Spring Cloud, Docker, OAuth2 and JWT.
+    `
   },
   {
     date: "October 2023",
-    title: "Backend Java Developer  − Prestige Pizza",
-    description:
-      "Developed and configured the complete backend for PrestigePizza, managing a Pizza warehouse with key functions such as customer management, invoices and custom filters. Ensured security with role systems, permissions and JWT authentication, and enabled project scalability using Docker. Technologies used: MySQL, Hibernate, JWT, Spring, Docker, among others.",
+    title: "Backend Java Developer - Prestige Pizza",
+    description: `
+      Developed and configured the complete backend for PrestigePizza, managing a Pizza warehouse with key functions such as customer management, invoices and custom filters. Ensured security with role systems, permissions and JWT authentication, and enabled project scalability using Docker. Technologies used: MySQL, Hibernate, JWT, Spring, Docker, among others.
+    `
   },
   {
     date: "August 2023",
-    title: "Backend Developer  − Supermarket Api",
-    description:
-      "I developed an API in Java Spring to monitor operations of a supermarket, solidly integrating PostgreSQL. I designed efficient services for product management and deployed the application without complications, using technologies such as Spring Boot, Spring Data JPA and Swagger to ensure its robustness and functionality.",
+    title: "Backend Developer - Supermarket API",
+    description: `
+      I developed an API in Java Spring to monitor operations of a supermarket, solidly integrating PostgreSQL. I designed efficient services for product management and deployed the application without complications, using technologies such as Spring Boot, Spring Data JPA and Swagger to ensure its robustness and functionality.
+    `
   }
-]
+];
 ---
 
 <ol class="relative border-s border-gray-200 ml-3">
   {
-    EXPERIENCIE.map((experiencie) => (
+    EXPERIENCE.map((experience, index) => (
       <li class="mb-10 ms-4">
-        <ExperienceItem {...experiencie} />
+        <ExperienceItem {...experience} />
       </li>
     ))
   }
 </ol>
+
