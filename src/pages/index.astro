@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Badge from "../components/Badge.astro"
+import WhatsappIcon from "../components/icons/Whatsapp.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import LinkedInIcon from "../components/icons/LinkedIn.astro"
 import SocialPill from "../components/SocialPill.astro"
@@ -17,7 +18,7 @@ import Projects from "../components/Projects.astro"
   description="Hire Paul for your company. Backend Web Developer"
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32">
+    <SectionContainer class="py-44 pb-32" id="sobre-mi">
       <img
         class="rounded-full h-[200px] mb-4"
         src="/portfolio/paulflores.webp"
@@ -32,7 +33,7 @@ import Projects from "../components/Projects.astro"
           rel="noopener"
           class="flex justify-center items-center"
         >
-          <Badge>Open To A Project!</Badge>
+          <Badge>Open To Work!</Badge>
         </a>
       </h1>
       <h2
@@ -41,10 +42,10 @@ import Projects from "../components/Projects.astro"
         <span>+2 year of experience.</span><span
           class="text-yellow-800 dark:text-yellow-200"
         >
-          Backend Web Developer</span
+          Backend Developer</span
         >
          .<span class="text-red-800 dark:text-red-200">
-          CMDX, Mexico</span
+          CDMX, Mexico</span
         >.
         <span class="text-sky-800 dark:text-sky-200"
           >Specialized in creating unique Webs.</span
@@ -64,6 +65,11 @@ import Projects from "../components/Projects.astro"
           <MailIcon class="size-4 md:size-6" />
            paulfloresdev@icloud.com
         </SocialPill>
+        <SocialPill href="https://wa.me/525659274696">
+          <WhatsappIcon class="size-4 md:size-6" />
+          5659274696
+        </SocialPill>
+
       </nav>
     </SectionContainer>
 
