@@ -1,16 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Badge from "../components/Badge.astro"
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
 import WhatsappIcon from "../components/icons/Whatsapp.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import LinkedInIcon from "../components/icons/LinkedIn.astro"
-import SocialPill from "../components/SocialPill.astro"
-import GitHubIcon from "../components/icons/GitHub.astro"
-import MailIcon from "../components/icons/Mail.astro"
-import Experience from "../components/Experience.astro"
-import Briefcase from "../components/icons/Briefcase.astro"
-import CodeIcon from "../components/icons/Code.astro"
-import Projects from "../components/Projects.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+import TitleSection from "@/components/TitleSection.astro"
 ---
 
 <Layout
@@ -18,79 +18,35 @@ import Projects from "../components/Projects.astro"
   description="Hire Paul for your company. Backend Web Developer"
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32" id="sobre-mi">
-      <img
-        class="rounded-full h-[200px] mb-4"
-        src="/portfolio/paulflores.webp"
-        alt="paul photo"
-      />
-      <h1
-        class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
-      >
-        Hey, I'm Paul <a
-          href="https://www.linkedin.com/in/paul-alan-flores-casta%C3%B1eda/"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center"
-        >
-          <Badge>Open To Work!</Badge>
-        </a>
-      </h1>
-      <h2
-        class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"
-      >
-        <span>+2 year of experience.</span><span
-          class="text-yellow-800 dark:text-yellow-200"
-        >
-          Backend Developer</span
-        >
-         .<span class="text-red-800 dark:text-red-200">
-          CDMX, Mexico</span
-        >.
-        <span class="text-sky-800 dark:text-sky-200"
-          >Specialized in creating unique Webs.</span
-        >
-      </h2>
-
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/paul-alan-flores-casta%C3%B1eda/">
-          <LinkedInIcon class="size-4 md:size-6" />
-           LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/Paul10FC">
-          <GitHubIcon class="size-4 md:size-6" />
-           GitHub
-        </SocialPill>
-        <SocialPill href="mailto:paulfloresdev@icloud.com">
-          <MailIcon class="size-4 md:size-6" />
-           paulfloresdev@icloud.com
-        </SocialPill>
-        <SocialPill href="https://wa.me/525659274696">
-          <WhatsappIcon class="size-4 md:size-6" />
-          5659274696
-        </SocialPill>
-
-      </nav>
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
     </SectionContainer>
-
+    <div class="space-y-24">
     <SectionContainer id="experiencia">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
-      >
-        <Briefcase class="size-7" />
-          Experience
-      </h2>
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </TitleSection>
       <Experience />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
-      >
+      <TitleSection>
         <CodeIcon class="size-7" />
-         Projects
-      </h2>
+        Proyectos
+      </TitleSection>
       <Projects />
     </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
+    </SectionContainer>
+  </div>
   </main>
 </Layout>
