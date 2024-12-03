@@ -1,48 +1,53 @@
 ---
-const personalImageAlt = "Miguel Ángel"
+const personalImageAlt = "Paul Flores"
 import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import WhatsappIcon from "../components/icons/Whatsapp.astro"
+import GitHub from "./icons/GitHub.astro"
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/midudev.webp"
+      src="/paul.JPEG"
       alt={personalImageAlt}
     />
     <a
-      href="https://linkedin.com/in/midudev"
+      href="https://linkedin.com/in/paulfloresdev"
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>Open to work!</Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hey, soy midudev
+    Hey, I'm Paul! 👋
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    +15 años de experiencia. <strong
-      >Ingeniero de Software y Creador de Contenido sobre Programación</strong
-    > de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web
-    únicas.
+    +2 years of experience. <strong
+      >🇲🇽 Mexican Backend developer and content creator about programming</strong
+    > Specializing in the development of unique web applications.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:miduga@gmail.com">
-      <MailIcon class="size-4" />
-      Contáctame
-    </SocialPill>
-    <SocialPill href="https://linkedin.com/in/midudev">
+    <SocialPill href="https://linkedin.com/in/paulfloresdev">
       <LinkedInIcon class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="https://wa.me/525659274696">
+      <WhatsappIcon class="size-4" />
+      WhatsApp
+    </SocialPill>
+    <SocialPill href="https://github.com/paulfloresdevs">
+      <GitHub class="size-4" />
+      GitHub
     </SocialPill>
   </nav>
 </div>

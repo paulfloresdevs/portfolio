@@ -8,7 +8,7 @@ import Maven from "./icons/Maven.astro"
 import MySQL from "./icons/MySQL.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
-import { imageConfig } from "astro:assets"
+import { Image, imageConfig } from "astro:assets"
 
 const TAGS = {
   SPRING: {
@@ -46,10 +46,9 @@ const PROJECTS = [
   {
     title: "Bank App",    
     description:
-      "Secure microservices project with Spring Boot and Spring Cloud. Includes advanced security (OAuth2, JWT) and Docker orchestration. offers a solid foundation in modern microservices-based application development.",
-    link: "https://bank-application-paul10fc.herokuapp.com/swagger-ui.html",  
+      "Secure microservices project with Spring Boot and Spring Cloud. Includes advanced security (OAuth2, JWT) and Docker orchestration. offers a solid foundation in modern microservices-based application development.",  
     github: "https://github.com/Paul10FC/bank-application",
-    image: "/images/bank-app.png",
+    image: "/bank.webp",
     tags: [TAGS.SPRING, TAGS.DOCKER, TAGS.POSTGRESQL, TAGS.SWAGGER, TAGS.MAVEN],
   },
   {
@@ -57,6 +56,7 @@ const PROJECTS = [
     description:
       "Complete backend configuration for the comprehensive management of a pizza warehouse, covering key aspects such as customer administration, billing, personalized filters by type of pizza and dynamic promotions. Developed roles, permissions and authentication systems using JWT to ensure strong layers of security. Implementing Docker for the final integration enabled a flexible and scalable infrastructure for the project. Technologies used: MySQL, Hibernate, JWT, Postman, Spring Data JPA, Spring, Spring Security, Spring Boot, Java, Loombook, JPQL, Swagger, JUnit and Docker.",
     github: "https://github.com/Paul10FC/platzi-pizzeria",
+    image: "/pizza-draw.webp",
     tags: [TAGS.SPRING, TAGS.MYSQL, TAGS.DOCKER, TAGS.SWAGGER]
   },  
   {
@@ -64,6 +64,7 @@ const PROJECTS = [
     description:
       "Development of a comprehensive API for the efficient management of a supermarket, using Java Spring with solid integration to a PostgreSQL database. The project included the design, deployment and supervision of services for product management, culminating in a successful launch of the application to ensure a seamless consumer experience. Tools used: Spring Framework, Spring Boot, Spring Data JPA, Data Mapper, Spring MVC, Swagger and JUnit.",
     github: "https://github.com/Paul10FC/platzi-market",
+    image: "/supermarket.webp",
     tags: [TAGS.SPRING, TAGS.POSTGRESQL, TAGS.SWAGGER]
   }
 ]
@@ -75,7 +76,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt="Projectos" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
